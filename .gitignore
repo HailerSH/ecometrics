@@ -1,35 +1,74 @@
-# --- Python / Django ---
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.sqlite3
-env/
-venv/
-.env
-*.log
+############################
+# Python / Django
+############################
+backend/venv/
+backend/**/__pycache__/
+backend/**/*.py[cod]
+backend/*.sqlite3
+backend/staticfiles/
 
-# Django static & media
-staticfiles/
-media/
+# Django local configs
+backend/**/local_settings.py
+backend/**/settings_local.py
 
-# --- Node / Angular ---
+############################
+# Node / Angular
+############################
 frontend/node_modules/
 frontend/dist/
 frontend/.angular/
-frontend/.env
+frontend/.cache/
+frontend/.npm/
+frontend/package-lock.json
 
-# --- OS ---
-.DS_Store
-Thumbs.db
+############################
+# Environment files
+############################
+# Ignore all .env files, except .env.example
+.env
+.env.*
+!.env.example
 
-# --- IDEs ---
-.vscode/
-.idea/
+############################
+# Docker
+############################
+# Local volumes
+docker-data/
+pgdata_dev/
+pgdata_prod/
 
-# --- Docker ---
-*.pid
+# Compose override files
 docker-compose.override.yml
 
-# --- Other ---
+############################
+# OS / Editor / IDE files
+############################
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+############################
+# Logs
+############################
+*.log
+logs/
+backend/**/logs/
+frontend/**/logs/
+
+############################
+# Misc
+############################
+*.tmp
 *.bak
+*.old
