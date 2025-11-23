@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 
 export interface AnnualEmission {
@@ -12,7 +13,7 @@ export interface AnnualEmission {
 
 @Injectable({ providedIn: 'root' })
 export class EmissionsService {
-  private baseUrl = 'http://localhost:8000/api/emissions/';
+  private baseUrl = `${environment.apiBaseUrl}/emissions/`;
 
   constructor(private http: HttpClient) {}
 
