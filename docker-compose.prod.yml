@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ecometrics
+      POSTGRES_USER: ecometrics
+      POSTGRES_PASSWORD: super-strong-password
+    volumes:
+      - pgdata_prod:/var/lib/postgresql/data
+    # no ports: exposed only inside Docker network
+
+  backend:
+    image: your-dockerhub-user/ecometrics-backend:latest
+    env_file: .env.prod
+    depends_on:
+      - db
+
+  frontend:
+    image: your-dockerhub-user/ecometrics-frontend:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    # If frontend needs API URL at build time, bake it in env.prod.ts
+
+volumes:
+  pgdata_prod:
