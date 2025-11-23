@@ -18,6 +18,8 @@ services:
       - db
     ports:
       - "8000"
+    volumes:
+      - static_volume:/app/static/
     restart: unless-stopped
 
   frontend:
@@ -39,6 +41,7 @@ services:
     volumes:
       - ./deploy/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - static_volume:/backend_static/
     restart: unless-stopped
 
 volumes:
