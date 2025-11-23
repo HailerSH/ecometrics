@@ -41,8 +41,9 @@ services:
     volumes:
       - ./deploy/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
-      - static_volume:/app/staticfiles
+      - static_volume:/staticfiles
     restart: unless-stopped
 
 volumes:
   pgdata_prod:
+  static_volume:
