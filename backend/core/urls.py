@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+from django.templatetags.static import static
 
 from rest_framework.routers import DefaultRouter
 
@@ -29,8 +31,9 @@ router.register("emissions", AnnualEmissionViewSet, basename="emissions")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path("favicon.ico", RedirectView.as_view(url=static("favicon.ico"))),
 
+    path('api/', include(router.urls)),
     # Schema
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Swagger UI
