@@ -1,0 +1,38 @@
+
+<section class="space-y-6">
+  <header class="space-y-2">
+    <p class="text-lg font-semibold uppercase tracking-wide text-emerald-300">
+      Data explorer
+    </p>
+    <h1 class="text-2xl font-semibold text-slate-50 sm:text-3xl">
+      Browse emissions data
+    </h1>
+    <p class="max-w-2xl text-sm text-slate-300">
+      Filter and inspect detailed emissions records obtained from the backend API.
+    </p>
+  </header>
+
+  <app-explorer-filters
+    [filters]="filters"
+    [years]="years"
+    [emissionTypes]="emissionTypes"
+    [countries]="countries"
+    [activities]="activities"
+  ></app-explorer-filters>
+
+  <app-explorer-grid
+    [emissions]="pagedEmissions"
+    [hasData]="filteredEmissions.length > 0"
+  ></app-explorer-grid>
+
+  <app-explorer-paginator
+    *ngIf="filteredEmissions.length > 0"
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    [pageStart]="pageStart"
+    [pageEnd]="pageEnd"
+    [totalItems]="filteredEmissions.length"
+    (prev)="prevPage()"
+    (next)="nextPage()"
+  ></app-explorer-paginator>
+</section>

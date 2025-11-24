@@ -1,0 +1,67 @@
+
+<form
+  [formGroup]="filters"
+  class="rounded-3xl border border-slate-800 bg-slate-900/70 p-4 mb-6 shadow-lg shadow-slate-900/60"
+>
+  <div class="grid gap-4 md:grid-cols-3 lg:grid-cols-5">
+    <!-- Emission type -->
+    <div class="space-y-1">
+      <label class="text-xs font-medium text-slate-300">Emission type</label>
+      <select
+        formControlName="emission_type"
+        class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-emerald-500/40 focus:border-emerald-400 focus:ring"
+      >
+        <option [ngValue]="null">All</option>
+        <option *ngFor="let t of emissionTypes" [value]="t">{{ t }}</option>
+      </select>
+    </div>
+
+    <!-- Country -->
+    <div class="space-y-1">
+      <label class="text-xs font-medium text-slate-300">Country</label>
+      <select
+        formControlName="country"
+        class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-emerald-500/40 focus:border-emerald-400 focus:ring"
+      >
+        <option [ngValue]="null">All</option>
+        <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+      </select>
+    </div>
+
+    <!-- Activity -->
+    <div class="space-y-1">
+      <label class="text-xs font-medium text-slate-300">Activity</label>
+      <select
+        formControlName="activity"
+        class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-emerald-500/40 focus:border-emerald-400 focus:ring"
+      >
+        <option [ngValue]="null">All</option>
+        <option *ngFor="let a of activities" [value]="a">{{ a }}</option>
+      </select>
+    </div>
+
+    <!-- From year -->
+    <div class="space-y-1">
+      <label class="text-xs font-medium text-slate-300">From year</label>
+      <select
+        formControlName="yearFrom"
+        class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-emerald-500/40 focus:border-emerald-400 focus:ring"
+      >
+        <option [ngValue]="null">Any</option>
+        <option *ngFor="let y of years" [value]="y">{{ y }}</option>
+      </select>
+    </div>
+
+    <!-- To year -->
+    <div class="space-y-1">
+      <label class="text-xs font-medium text-slate-300">To year</label>
+      <select
+        formControlName="yearTo"
+        class="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-emerald-500/40 focus:border-emerald-400 focus:ring"
+      >
+        <option [ngValue]="null">Any</option>
+        <option *ngFor="let y of years" [value]="y">{{ y }}</option>
+      </select>
+    </div>
+  </div>
+</form>
