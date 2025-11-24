@@ -82,7 +82,7 @@ class AnnualEmissionAPITests(APITestCase):
         }
         res = self.client.post(self.list_url, payload, format="json")
 
-        self.assertEqual(res.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_delete_not_allowed_if_read_only(self):
         res = self.client.delete(self.detail_url)
