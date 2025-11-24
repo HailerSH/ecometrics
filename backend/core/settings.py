@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
     'rest_framework',
     'emissions',
-    'corsheaders',
 ]
 
 # Allow Angular dev origin:
@@ -47,6 +49,7 @@ CORS_ALLOW_ALL_ORIGINS = True  # Use django-cors-headers later
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny'],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 MIDDLEWARE = [
