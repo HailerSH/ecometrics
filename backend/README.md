@@ -17,4 +17,10 @@ cd ..
 docker compose -f docker-compose.dev.yml up
 ```
 
+## Load initial data
+```bash
+cd ..
+docker compose -f docker-compose.prod.yml exec backend python manage.py loaddata annualemission.json
+```
+
 The browsable API and admin will then be available on the configured host/port.
