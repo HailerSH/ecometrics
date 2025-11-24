@@ -1,5 +1,6 @@
 
 export const environment = {
   production: true,
-  apiBaseUrl: '/api',
+  backendUrl: 'https://ecometrics.hailersh.xyz',
+  apiBaseUrl: 'https://ecometrics.hailersh.xyz/api',
 };
