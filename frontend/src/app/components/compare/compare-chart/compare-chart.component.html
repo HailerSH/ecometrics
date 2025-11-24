@@ -1,0 +1,24 @@
+
+<section
+  class="rounded-3xl border border-slate-800 bg-slate-900/70 p-4 shadow-xl shadow-emerald-500/10"
+>
+  <h2 class="mb-3 text-sm font-semibold text-slate-100">
+    Total emissions by year
+  </h2>
+
+  <div *ngIf="lineChartData.labels?.length; else noData" class="h-[360px]">
+    <canvas
+      baseChart
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [type]="lineChartType"
+      class="!h-full"
+    ></canvas>
+  </div>
+
+  <ng-template #noData>
+    <p class="py-10 text-center text-xs text-slate-400">
+      No data for the selected filters.
+    </p>
+  </ng-template>
+</section>

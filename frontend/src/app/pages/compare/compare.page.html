@@ -1,0 +1,30 @@
+
+<section class="space-y-6">
+  <!-- Header -->
+  <header class="space-y-3">
+    <p class="font-semibold uppercase tracking-wide text-emerald-300">
+      Charts &amp; analysis
+    </p>
+    <h1 class="text-2xl font-semibold text-slate-50 sm:text-3xl">
+      Compare emissions over time
+    </h1>
+    <p class="max-w-2xl text-sm text-slate-300">
+      Filter by country, emission type, activity and year range to see how
+      total emissions evolve over time. Data is aggregated per year.
+    </p>
+  </header>
+
+  <app-compare-filters
+    [filters]="filters"
+    [countries]="countries"
+    [emissionTypes]="emissionTypes"
+    [activities]="activities"
+    [years]="years"
+  ></app-compare-filters>
+
+  <app-compare-chart
+    [lineChartData]="lineChartData"
+    [lineChartOptions]="lineChartOptions"
+    [lineChartType]="lineChartType"
+  ></app-compare-chart>
+</section>
