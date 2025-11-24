@@ -1,0 +1,129 @@
+
+<div class="space-y-4">
+
+  <h2 class="text-lg font-semibold text-slate-50">What you can see in this app</h2>
+
+  <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Data explorer -->
+    <button
+      routerLink="/explorer"
+      class="group flex h-full flex-col justify-between rounded-3xl border border-slate-700/80 bg-slate-900/70 p-4
+             text-left shadow-lg shadow-slate-900/60 transition hover:-translate-y-1 hover:border-emerald-400/80
+             hover:shadow-emerald-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400
+             hover:cursor-pointer"
+    >
+      <div class="space-y-2">
+        <p class="font-semibold uppercase tracking-wide text-emerald-300">Data explorer</p>
+        <h3 class="text-sm font-semibold text-slate-50">Browse emissions data</h3>
+        <p class="text-[13px] text-slate-300">
+          See annual greenhouse gas emissions, sort and filter them, and inspect individual records.
+        </p>
+      </div>
+      <span class="mt-4 inline-flex items-center gap-1 font-semibold text-emerald-300">
+        Open explorer
+        <iconify-icon
+          icon="lucide:arrow-up-right"
+          class="transition-transform group-hover:translate-x-0.5"
+        ></iconify-icon>
+      </span>
+    </button>
+
+    <!-- Charts -->
+    <button
+      routerLink="/compare"
+      class="group flex h-full flex-col justify-between rounded-3xl border border-slate-700/80 bg-slate-900/70 p-4
+             text-left shadow-lg shadow-slate-900/60 transition hover:-translate-y-1 hover:border-cyan-400/80
+             hover:shadow-cyan-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400
+             hover:cursor-pointer"
+    >
+      <div class="space-y-2">
+        <p class="font-semibold uppercase tracking-wide text-cyan-300">Charts &amp; analysis</p>
+        <h3 class="text-sm font-semibold text-slate-50">Visual comparisons</h3>
+        <p class="text-[13px] text-slate-300">
+          Compare emissions across years with different filters using interactive charts powered by the API.
+        </p>
+      </div>
+      <span class="mt-4 inline-flex items-center gap-1 font-semibold text-cyan-300">
+        View charts
+        <iconify-icon
+          icon="lucide:arrow-up-right"
+          class="transition-transform group-hover:translate-x-0.5"
+        ></iconify-icon>
+      </span>
+    </button>
+
+    <!-- API docs -->
+    <a
+      href="{{ apiDocsUrl }}"
+      target="_blank"
+      class="group flex h-full flex-col justify-between rounded-3xl border border-slate-700/80 bg-slate-900/70 p-4
+             text-left shadow-lg shadow-slate-900/60 transition hover:-translate-y-1 hover:border-indigo-400/80
+             hover:shadow-indigo-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+    >
+      <div class="space-y-2">
+        <p class="font-semibold uppercase tracking-wide text-indigo-300">REST API</p>
+
+        <h3 class="text-sm font-semibold text-slate-50">Inspect the DRF endpoints</h3>
+        <p class="text-[13px] text-slate-300">
+          Explore the Django REST Framework API used by the frontend: list, detail and aggregated routes.
+        </p>
+      </div>
+      <span class="mt-4 inline-flex items-center gap-1 font-semibold text-indigo-300">
+      Open API docs
+      <iconify-icon
+        icon="lucide:arrow-up-right"
+        class="transition-transform group-hover:translate-x-0.5"
+      ></iconify-icon>
+    </span>
+    </a>
+
+    <!-- Admin -->
+    <a
+      href="{{ adminUrl }}"
+      target="_blank"
+      class="group flex h-full flex-col justify-between rounded-3xl border border-slate-700/80 bg-slate-900/70 p-4
+             text-left shadow-lg shadow-slate-900/60 transition hover:-translate-y-1 hover:border-fuchsia-400/80
+             hover:shadow-fuchsia-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400"
+    >
+      <div class="space-y-2">
+        <p class="font-semibold uppercase tracking-wide text-fuchsia-300">Admin</p>
+        <h3 class="text-sm font-semibold text-slate-50">Django admin interface</h3>
+        <p class="text-[13px] text-slate-300">
+          Manage records through Django’s admin panel.
+          <br><b>Test credentials:</b> test / test.
+        </p>
+      </div>
+      <span class="mt-4 inline-flex items-center gap-1 font-semibold text-fuchsia-300">
+        Go to admin
+        <iconify-icon
+          icon="lucide:arrow-up-right"
+          class="transition-transform group-hover:translate-x-0.5"
+        ></iconify-icon>
+      </span>
+    </a>
+
+    <!-- Technical breakdown -->
+    <button
+      routerLink="/about-technical"
+      class="group flex h-full flex-col justify-between rounded-3xl border border-slate-700/80 bg-slate-900/70 p-4
+             text-left shadow-lg shadow-slate-900/60 transition hover:-translate-y-1 hover:border-amber-400/80
+             hover:shadow-amber-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400
+             hover:cursor-pointer"
+    >
+      <div class="space-y-2">
+        <p class="font-semibold uppercase tracking-wide text-amber-300">For recruiters</p>
+        <h3 class="text-sm font-semibold text-slate-50">Technical breakdown</h3>
+        <p class="text-[13px] text-slate-300">
+          See the main decisions I took for architecture, security, Docker setup and deployment on the VPS.
+        </p>
+      </div>
+      <span class="mt-4 inline-flex items-center gap-1 font-semibold text-amber-300">
+        Read more
+        <iconify-icon
+          icon="lucide:arrow-up-right"
+          class="transition-transform group-hover:translate-x-0.5"
+        ></iconify-icon>
+      </span>
+    </button>
+  </div>
+</div>
