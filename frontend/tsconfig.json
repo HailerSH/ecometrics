@@ -21,7 +21,8 @@
       "@components/*": ["app/components/*"],
       "@core/*": ["app/core/*"],
       "@layouts/*": ["app/layouts/*"],
-      "@pages/*": ["app/pages/*"]
+      "@pages/*": ["app/pages/*"],
+      "@services/*": ["app/services/*"]
     }
   },
   "angularCompilerOptions": {
