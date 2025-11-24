@@ -23,7 +23,12 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        APP_ENV: production
+    env_file:
+      - .env.prod
     depends_on:
       - backend
     ports:

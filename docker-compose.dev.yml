@@ -24,7 +24,12 @@ services:
       - "8000:8000"
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        APP_ENV: development
+    env_file:
+      - .env.dev
     depends_on:
       - backend
     ports:
