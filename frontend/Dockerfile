@@ -2,20 +2,11 @@
 FROM node:20 AS build
 WORKDIR /app
 
-# This will be filled from .env via docker-compose
-ARG APP_ENV=production
-ENV APP_ENV=${APP_ENV}
-
 COPY package*.json ./
 RUN npm install
 COPY . .
 
-# Use APP_ENV to decide which Angular build to run
-RUN if [ "$APP_ENV" = "production" ]; then \
-      npm run build:prod; \
-    else \
-      npm run build; \
-    fi
+RUN npm run build:prod;
 
 # Serve
 FROM nginx:alpine
